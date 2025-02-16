@@ -16,8 +16,8 @@ fun main() {
         "1" -> {ytMusic(); main()}
         "2w", "w2" -> {ytMusicWayland() ; main()}
         "2r", "2wr", "2rw" -> { ytMusicUninstall() }
-        "I", "i" -> showTips()
-        "S", "s" -> openUrl()
+        "I", "i" -> {showTips() ; main()}
+        "S", "s" -> {openUrl() ; main()}
         else -> print("invalid output")
     }
 }
