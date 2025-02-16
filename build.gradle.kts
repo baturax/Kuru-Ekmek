@@ -19,7 +19,7 @@ kotlin {
 
 tasks.jar.configure {
     manifest {
-        attributes(mapOf("Main-Class" to "KuruEkmek.MainKt"))
+        attributes(mapOf("Main-Class" to "kuruekmek.MainKt"))
     }
     configurations["compileClasspath"].forEach { file: File ->
         from(zipTree(file.absoluteFile))
