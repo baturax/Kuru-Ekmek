@@ -16,4 +16,3 @@ fun ideaWayland(desktopFileDirectory: File) {
         .waitFor()
 }
 
-//sed -i '3s/$/ eklenecek_yazi/' dosya.txt
