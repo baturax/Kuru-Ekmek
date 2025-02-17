@@ -39,7 +39,7 @@ fun ideaUninstall() {
     val fileName = "Idea"
     File("$cacheDirectory/$fileName$targzext").delete()
     Path("$cacheDirectory/JetBrains/$cacheNames").deleteRecursively()
-    Path("$configDirectory/").deleteRecursively()
+    Path("$configDirectory/JetBrains/$cacheNames").deleteRecursively()
     Path("$binDirectory/$fileName").deleteRecursively()
     File("$desktopsDirectory/$fileName$desktopext").delete()
 }
