@@ -3,7 +3,7 @@ package kuruekmek.tools
 import java.io.File
 
 val whereIsMyHome: String? = System.getProperty("user.home")
-val cacheDirectory: File = File("$whereIsMyHome/.cache")
+val cacheDirectory: File = File("$whereIsMyHome/.cache/downloaders")
 val binDirectory: File = File("$whereIsMyHome/.local/bin")
 val configDirectory: File = File("$whereIsMyHome/.config")
 val desktopsDirectory: File = File("$whereIsMyHome/.local/share/applications")

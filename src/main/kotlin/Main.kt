@@ -1,7 +1,9 @@
 package kuruekmek
 
 import kuruekmek.apps.*
+import kuruekmek.tools.cacheDirectory
 import kuruekmek.tools.checkETC
+import java.io.File
 
 fun main() {
     checkETC()
@@ -14,6 +16,8 @@ fun hello() {
         2. Intellij Clion
         3. Intellij Idea
         4. Ferdium
+        
+        C. to clean cache
         S. Source Code
         I. For Tips 😉
     """.trimMargin())
@@ -40,9 +44,21 @@ fun hello() {
         "4r", "4wr", "4rw" -> { ferdiumUninstall() ; runHelloAgain() }
 
             //Misc
+        "C", "c" -> { cleanCache() ; runHelloAgain() }
         "I", "i" -> { showTips() ; runHelloAgain() }
         "S", "s" -> { openUrl() ; runHelloAgain() }
         else -> println("invalid output, leaving 😈")
+    }
+}
+
+fun cleanCache() {
+    val cacheDirectory = File("$cacheDirectory")
+    val cacheFiles = cacheDirectory.listFiles()
+
+    if (cacheFiles != null) {
+        for (file in cacheFiles) {
+            file.delete() // Delete each file
+        }
     }
 }
 
