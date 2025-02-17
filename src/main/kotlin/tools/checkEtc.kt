@@ -6,10 +6,20 @@ import kotlin.system.exitProcess
 fun checkETC() {
     checkWget()
     checkCacheDirectory()
+    checkFontDirectory()
     checkbinDirectory()
     checkConfigDirectory()
     checkDesktopsDirectory()
     finished()
+}
+
+fun checkFontDirectory() {
+    if (fontsDirectory.exists()) {
+        println("Font Directory exists, skipping")
+    } else if (!fontsDirectory.exists()) {
+        println("Creating fonts Directory for you")
+        fontsDirectory.mkdirs()
+    }
 }
 
 fun finished() {
