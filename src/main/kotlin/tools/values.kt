@@ -11,7 +11,7 @@ val desktopsDirectory: File = File("$whereIsMyHome/.local/share/applications")
 const val mainEntry = "[Desktop Entry]"
 const val applicationType = "Application"
 const val waylandElectron = " 4s/$/ --ozone-platform=wayland/"
-const val waylandJetbrains = " -Dawt.toolkit.name=WLToolkit"
+const val waylandJetbrains = " 4s/$/ -Dawt.toolkit.name=WLToolkit/"
 const val targzext = ".tar.gz"
 const val zipext = ".zip"
 const val desktopext = ".desktop"

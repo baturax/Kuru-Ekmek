@@ -9,6 +9,12 @@ fun checkETC() {
     checkbinDirectory()
     checkConfigDirectory()
     checkDesktopsDirectory()
+    finished()
+}
+
+fun finished() {
+    ProcessBuilder("bash", "-c", "sleep 1").start().waitFor()
+    ProcessBuilder("bash", "-c", "clear").redirectOutput(ProcessBuilder.Redirect.INHERIT).start().waitFor()
 }
 
 fun checkCacheDirectory() {

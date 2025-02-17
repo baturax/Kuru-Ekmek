@@ -15,4 +15,3 @@ fun ideaWayland(desktopFileDirectory: File) {
         .start()
         .waitFor()
 }
-

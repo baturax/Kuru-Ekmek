@@ -12,17 +12,30 @@ fun hello() {
     println("""Select what you want to download
         1. Youtube Music
         2. Intellij Clion
+        3. Intellij Idea
         S. Source Code
         I. For Tips 😉
     """.trimMargin())
     val getInput = readlnOrNull().toString()
     when (getInput) {
+            //Yt Music
         "1" -> { ytMusic() ; runHelloAgain() }
-        "2w", "w2" -> { ytMusicWayland() ; runHelloAgain() }
-        "2r", "2wr", "2rw" -> { ytMusicUninstall() ; runHelloAgain() }
+        "1w" -> { ytMusicWayland() ; runHelloAgain() }
+        "1r", "1wr", "1rw" -> { ytMusicUninstall() ; runHelloAgain() }
+
+            //Clion
+        "2" -> { clion() ; runHelloAgain() }
+        "2w" -> { clionWayland() ; runHelloAgain() }
+        "2r", "2wr", "2rw" -> { clionUninstall() ; runHelloAgain() }
+
+            //Idea
+        "3" -> { idea()  ; runHelloAgain() }
+        "3w" -> { ideaWayland()  ; runHelloAgain() }
+        "3r", "3wr", "3rw" -> { ideaUninstall()  ; runHelloAgain() }
+            //Misc
         "I", "i" -> { showTips() ; runHelloAgain() }
         "S", "s" -> { openUrl() ; runHelloAgain() }
-        else -> print("invalid output")
+        else -> println("invalid output, leaving 😈")
     }
 }
 
