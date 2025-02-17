@@ -13,6 +13,7 @@ fun hello() {
         1. Youtube Music
         2. Intellij Clion
         3. Intellij Idea
+        4. Ferdium
         S. Source Code
         I. For Tips 😉
     """.trimMargin())
@@ -32,6 +33,12 @@ fun hello() {
         "3" -> { idea()  ; runHelloAgain() }
         "3w" -> { ideaWayland()  ; runHelloAgain() }
         "3r", "3wr", "3rw" -> { ideaUninstall()  ; runHelloAgain() }
+
+            //Ferdium
+        "4" -> { ferdium() ; runHelloAgain()}
+        "4w" -> { ferdiumWayland() ; runHelloAgain()}
+        "4r", "4wr", "4rw" -> { ferdiumUninstall() ; runHelloAgain() }
+
             //Misc
         "I", "i" -> { showTips() ; runHelloAgain() }
         "S", "s" -> { openUrl() ; runHelloAgain() }
@@ -46,7 +53,7 @@ fun runHelloAgain() {
 
 fun showTips() {
     println("")
-    println("""You can append e to end of the app to download eap for jetbrains tools. ie:
+    println("""ie:
         To install eap versions, append e
         To enable Wayland Support, append w (ide must be installed already)
         To uninstall, append r
