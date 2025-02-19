@@ -8,7 +8,10 @@ val binDirectory: File = File("$whereIsMyHome/.local/bin")
 val configDirectory: File = File("$whereIsMyHome/.config")
 val desktopsDirectory: File = File("$whereIsMyHome/.local/share/applications")
 val fontsDirectory: File = File("$whereIsMyHome/.local/share/fonts")
+val autoStartDirectory: File = File("$configDirectory/autostart")
+val realCacheDirectory: File = File("$whereIsMyHome/.cache")
 
+const val jetbrains = "JetBrains"
 const val mainEntry = "[Desktop Entry]"
 const val applicationType = "Application"
 const val waylandElectron = " 4s/$/ --ozone-platform=wayland/"

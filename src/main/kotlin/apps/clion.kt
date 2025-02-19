@@ -6,41 +6,51 @@ import kotlin.io.path.ExperimentalPathApi
 import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
-fun clion() {
-    //For files
-    val version = "2024.3.3"
-    val url = "https://download-cdn.jetbrains.com/cpp/CLion-$version.tar.gz"
-    val fileName = "clion"
-    val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
-    val extractFileDirectory = File("$binDirectory/$fileName")
-    val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+open class Clion {
+    private val version = "2024.3.3"
+    private val fileVersion = "2024.3"
+    private val url = "https://download-cdn.jetbrains.com/cpp/CLion-$version.tar.gz"
+    private val fileName = "clion"
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val extractFileDirectory = File("$binDirectory/$fileName")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
 
     //For desktop
-    val appName = "Clion"
-    val comment = "A cross-platform IDE for C and C++"
-    val runExec = File("$binDirectory/$fileName/bin/clion")
-    val icon = File("$binDirectory/$fileName/bin/clion.png")
-    val categories = "Development"
-    val terminal = "false"
+    private val appName = "Clion"
+    private val comment = "A cross-platform IDE for C and C++"
+    private val runExec = File("$binDirectory/$fileName/bin/clion")
+    private val icon = File("$binDirectory/$fileName/bin/clion.png")
+    private val categories = "Development"
+    private val terminal = "false"
 
-    downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+    fun clion() {
+        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+    }
+
+    fun clionWayland() {
+        val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+        ideaWayland(desktopFileDirectory)
+    }
+
+    @OptIn(ExperimentalPathApi::class)
+    fun clionUninstall() {
+        Path("$configDirectory/$jetbrains/Clion2024.3").deleteRecursively()
+        Path("$binDirectory/$fileName").deleteRecursively()
+        Path("$desktopFileDirectory").deleteRecursively()
+        Path("$cacheDirectory/$fileName$targzext").deleteRecursively()
+        Path("$realCacheDirectory/$jetbrains/$appName$fileVersion").deleteRecursively()
+    }
+}
+
+fun clion() {
+    Clion().clion()
 }
 
 fun clionWayland() {
-    val fileName = "clion"
-
-    val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
-    ideaWayland(desktopFileDirectory)
+    Clion().clionWayland()
 }
 
-@OptIn(ExperimentalPathApi::class)
 fun clionUninstall() {
-    val cacheNames = "CLion2024.3"
-    val fileName = "clion"
-    File("$cacheDirectory/$fileName$targzext").delete()
-    Path("$cacheDirectory/JetBrains/$cacheNames").deleteRecursively()
-    Path("$configDirectory/JetBrains/$cacheNames").deleteRecursively()
-    Path("$binDirectory/$fileName").deleteRecursively()
-    File("$desktopsDirectory/$fileName$desktopext").delete()
+    Clion().clionUninstall()
 
 }

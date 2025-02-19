@@ -2,43 +2,45 @@ package kuruekmek.apps
 
 import kuruekmek.tools.*
 import java.io.File
-import kotlin.io.path.ExperimentalPathApi
-import kotlin.io.path.Path
-import kotlin.io.path.deleteRecursively
+
+open class YtMusic {
+    private val version = "3.7.2"
+    private val url = "https://github.com/th-ch/youtube-music/releases/download/v${version}/youtube-music-$version.tar.gz"
+    private val fileName = "youtube-music"
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val extractFileDirectory = File("$binDirectory/$fileName")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+
+    //For desktop
+    private val appName = "Youtube Music"
+    private val comment = "YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader"
+    private val runExec = File("$binDirectory/$fileName/$fileName")
+    private val icon = File("$binDirectory/$fileName/resources/app.asar.unpacked/assets/$fileName$pngExt")
+    private val categories = "Music"
+    private val terminal = "false"
+
+    fun ytMusic() {
+        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+    }
+
+    fun ytMusicWayland() {
+        val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+        electronWayland(desktopFileDirectory)
+    }
+
+    fun ytMusicUninstall() {
+        uninstaller(fileName, null, null)
+    }
+}
 
 fun ytMusic() {
-        //For files
-    val version = "3.7.2"
-    val url = "https://github.com/th-ch/youtube-music/releases/download/v${version}/youtube-music-$version.tar.gz"
-    val fileName = "youtube-music"
-    val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
-    val extractFileDirectory = File("$binDirectory/$fileName")
-    val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
-
-        //For desktop
-    val appName = "Youtube Music"
-    val comment = "YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader"
-    val runExec = File("$binDirectory/$fileName/$fileName")
-    val icon = File("$binDirectory/$fileName/resources/app.asar.unpacked/assets/$fileName$pngExt")
-    val categories = "Music"
-    val terminal = "false"
-
-    downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+    YtMusic().ytMusic()
 }
 
 fun ytMusicWayland() {
-    val fileName = "youtube-music"
-
-    val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
-    electronWayland(desktopFileDirectory)
+    YtMusic().ytMusicWayland()
 }
 
-@OptIn(ExperimentalPathApi::class)
 fun ytMusicUninstall() {
-    val fileName = "youtube-music"
-    File("$cacheDirectory/$fileName$targzext").delete()
-    Path("$configDirectory/YouTube Music").deleteRecursively()
-    Path("$binDirectory/$fileName").deleteRecursively()
-    File("$desktopsDirectory/$fileName$desktopext").delete()
-
+    YtMusic().ytMusicUninstall()
 }

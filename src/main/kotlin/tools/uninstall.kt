@@ -1,2 +1,0 @@
-package kuruekmek.tools
-

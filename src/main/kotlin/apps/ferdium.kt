@@ -6,39 +6,50 @@ import kotlin.io.path.ExperimentalPathApi
 import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
+open class Ferdium {
+    private val version = "7.0.0"
+    private val url = "https://github.com/ferdium/ferdium-app/releases/download/v$version/Ferdium-linux-$version.tar.gz"
+    private val fileName = "ferdium"
+
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val extractFileDirectory = File("$binDirectory/$fileName")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+
+    //For desktop
+    private val appName = "Ferdium"
+    private val comment = " All your services in one place, built by the community "
+    private val runExec = File("$binDirectory/$fileName/ferdium")
+    private val icon = File("$binDirectory/$fileName/resources/")
+    private val categories = "Social"
+    private val terminal = "false"
+
+    fun ferdium() {
+        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+    }
+
+    fun ferdiumWayland() {
+        val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+        electronWayland(desktopFileDirectory)
+    }
+
+    @OptIn(ExperimentalPathApi::class)
+    fun ferdiumUninstall() {
+        Path("$configDirectory/Ferdium").deleteRecursively()
+        Path("$binDirectory/$fileName").deleteRecursively()
+        Path("$desktopFileDirectory").deleteRecursively()
+        Path("$cacheDirectory/$fileName$targzext").deleteRecursively()
+        Path("$autoStartDirectory/$fileName$desktopext").deleteRecursively()
+    }
+}
+
 fun ferdium() {
-        //For files
-    val version = "7.0.0"
-    val url = "https://github.com/ferdium/ferdium-app/releases/download/v$version/Ferdium-linux-$version.tar.gz"
-    val fileName = "ferdium"
-    val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
-    val extractFileDirectory = File("$binDirectory/$fileName")
-    val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
-
-
-        //For desktop
-    val appName = "Ferdium"
-    val comment = " All your services in one place, built by the community "
-    val runExec = File("$binDirectory/$fileName/ferdium")
-    val icon = File("$binDirectory/$fileName/resources/")
-    val categories = "Social"
-    val terminal = "false"
-
-    downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+    Ferdium().ferdium()
 }
 
 fun ferdiumWayland() {
-    val fileName = "ferdium"
-
-    val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
-    electronWayland(desktopFileDirectory)
+    Ferdium().ferdiumWayland()
 }
 
-@OptIn(ExperimentalPathApi::class)
 fun ferdiumUninstall() {
-    val fileName = "ferdium"
-    File("$cacheDirectory/$fileName$targzext").delete()
-    Path("$configDirectory/Ferdium").deleteRecursively()
-    Path("$binDirectory/$fileName").deleteRecursively()
-    File("$desktopsDirectory/$fileName$desktopext").delete()
+    Ferdium().ferdiumUninstall()
 }
