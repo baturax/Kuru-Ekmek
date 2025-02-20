@@ -33,10 +33,11 @@ open class YtMusic {
 
     @OptIn(ExperimentalPathApi::class)
     fun ytMusicUninstall() {
-        Path("$configDirectory/YouTube Music").deleteRecursively()
         Path("$extractFileDirectory").deleteRecursively()
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
+        Path("$configDirectory/YouTube Music").deleteRecursively()
+
     }
 }
 

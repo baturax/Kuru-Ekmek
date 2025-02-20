@@ -35,10 +35,10 @@ open class Idea {
 
     @OptIn(ExperimentalPathApi::class)
     fun ideaUninstall() {
-        Path("$configDirectory/$jetbrains/IntelliJIdea$fileVersion").deleteRecursively()
         Path("$extractFileDirectory").deleteRecursively()
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
+        Path("$configDirectory/$jetbrains/IntelliJIdea$fileVersion").deleteRecursively()
         Path("$realCacheDirectory/$jetbrains/IntelliJIdea$fileVersion").deleteRecursively()
     }
     }

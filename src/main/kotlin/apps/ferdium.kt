@@ -34,10 +34,10 @@ open class Ferdium {
 
     @OptIn(ExperimentalPathApi::class)
     fun ferdiumUninstall() {
-        Path("$configDirectory/$appName").deleteRecursively()
         Path("$extractFileDirectory").deleteRecursively()
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
+        Path("$configDirectory/$appName").deleteRecursively()
         Path("$autoStartDirectory/$fileName$desktopext").deleteRecursively()
     }
 }

@@ -34,10 +34,10 @@ open class Clion {
 
     @OptIn(ExperimentalPathApi::class)
     fun clionUninstall() {
-        Path("$configDirectory/$jetbrains/CLion$fileVersion").deleteRecursively()
         Path("$extractFileDirectory").deleteRecursively()
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
+        Path("$configDirectory/$jetbrains/CLion$fileVersion").deleteRecursively()
         Path("$realCacheDirectory/$jetbrains/CLion$fileVersion").deleteRecursively()
     }
 }
