@@ -18,8 +18,6 @@ open class Idea {
     private val icon = File("$binDirectory/$fileName/bin/idea.png")
     private val categories = "Development"
     private val terminal = "false"
-    private val cacheNames = "IntelliJIdea2024.3"
-    private val cacheDirectoryOfFile = "JetBrains"
 
     fun idea() {
         downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
@@ -32,7 +30,7 @@ open class Idea {
     }
 
     fun ideaUninstall() {
-        uninstaller(fileName, cacheNames, cacheDirectoryOfFile)
+        //TODO
     }
     }
 

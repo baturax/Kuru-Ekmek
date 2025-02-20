@@ -2,6 +2,9 @@ package kuruekmek.apps
 
 import kuruekmek.tools.*
 import java.io.File
+import kotlin.io.path.ExperimentalPathApi
+import kotlin.io.path.Path
+import kotlin.io.path.deleteRecursively
 
 open class YtMusic {
     private val version = "3.7.2"
@@ -28,8 +31,12 @@ open class YtMusic {
         electronWayland(desktopFileDirectory)
     }
 
+    @OptIn(ExperimentalPathApi::class)
     fun ytMusicUninstall() {
-        uninstaller(fileName, null, null)
+        Path("$configDirectory/YouTube Music").deleteRecursively()
+        Path("$extractFileDirectory").deleteRecursively()
+        Path("$desktopFileDirectory").deleteRecursively()
+        Path("$downloadFileDirectory").deleteRecursively()
     }
 }
 
