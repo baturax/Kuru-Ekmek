@@ -2,9 +2,13 @@ package kuruekmek.apps
 
 import kuruekmek.tools.*
 import java.io.File
+import kotlin.io.path.ExperimentalPathApi
+import kotlin.io.path.Path
+import kotlin.io.path.deleteRecursively
 
 open class Idea {
     private val version = "2024.3.3"
+    private val fileVersion = "2024.3"
     private val url = "https://download-cdn.jetbrains.com/idea/ideaIU-$version.tar.gz"
     private val fileName = "idea"
     private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
@@ -29,8 +33,13 @@ open class Idea {
         ideaWayland(desktopFileDirectory)
     }
 
+    @OptIn(ExperimentalPathApi::class)
     fun ideaUninstall() {
-        //TODO
+        Path("$configDirectory/$jetbrains/IntelliJIdea$fileVersion").deleteRecursively()
+        Path("$extractFileDirectory").deleteRecursively()
+        Path("$desktopFileDirectory").deleteRecursively()
+        Path("$downloadFileDirectory").deleteRecursively()
+        Path("$realCacheDirectory/$jetbrains/IntelliJIdea$fileVersion").deleteRecursively()
     }
     }
 
