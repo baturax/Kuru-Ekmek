@@ -18,8 +18,8 @@ open class VsCode {
     //For desktop
     private val appName = "VsCodium"
     private val comment = " binary releases of VS Code without MS branding/telemetry/licensing"
-    private val runExec = File("$binDirectory/$fileName/")
-    private val icon = File("$binDirectory/$fileName/")
+    private val runExec = File("$binDirectory/$fileName/codium")
+    private val icon = File("$binDirectory/$fileName/resources/app/resources/linux/code.png")
     private val categories = "Development"
     private val terminal = "false"
 
@@ -37,7 +37,8 @@ open class VsCode {
         Path("$extractFileDirectory").deleteRecursively()
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
-
+        Path("$whereIsMyHome/.vscode-oss").deleteRecursively()
+        Path("$configDirectory/VSCodium").deleteRecursively()
 
     }
 }
