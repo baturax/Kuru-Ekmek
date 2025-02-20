@@ -10,7 +10,7 @@ open class VsCode {
     private val version = "1.97.2.25045"
     private val url = "https://github.com/VSCodium/vscodium/releases/download/$version/VSCodium-linux-x64-$version.tar.gz"
     private val fileName = "vscodium"
-    // private val fileName = ""
+
     private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
     private val extractFileDirectory = File("$binDirectory/$fileName")
     private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")

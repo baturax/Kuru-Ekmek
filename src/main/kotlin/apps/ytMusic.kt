@@ -10,6 +10,7 @@ open class YtMusic {
     private val version = "3.7.2"
     private val url = "https://github.com/th-ch/youtube-music/releases/download/v${version}/youtube-music-$version.tar.gz"
     private val fileName = "youtube-music"
+
     private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
     private val extractFileDirectory = File("$binDirectory/$fileName")
     private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")

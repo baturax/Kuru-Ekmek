@@ -11,6 +11,7 @@ open class Clion {
     private val fileVersion = "2024.3"
     private val url = "https://download-cdn.jetbrains.com/cpp/CLion-$version.tar.gz"
     private val fileName = "clion"
+
     private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
     private val extractFileDirectory = File("$binDirectory/$fileName")
     private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
@@ -29,7 +30,7 @@ open class Clion {
 
     fun clionWayland() {
         val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
-        ideaWayland(desktopFileDirectory)
+        jetbrainsWayland(desktopFileDirectory)
     }
 
     @OptIn(ExperimentalPathApi::class)

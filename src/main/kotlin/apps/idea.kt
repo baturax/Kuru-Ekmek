@@ -11,6 +11,7 @@ open class Idea {
     private val fileVersion = "2024.3"
     private val url = "https://download-cdn.jetbrains.com/idea/ideaIU-$version.tar.gz"
     private val fileName = "idea"
+
     private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
     private val extractFileDirectory = File("$binDirectory/$fileName")
     private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
@@ -30,7 +31,7 @@ open class Idea {
     fun ideaWayland() {
 
         val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
-        ideaWayland(desktopFileDirectory)
+        jetbrainsWayland(desktopFileDirectory)
     }
 
     @OptIn(ExperimentalPathApi::class)

@@ -9,7 +9,7 @@ fun electronWayland(desktopFileDirectory: File) {
         .waitFor()
 }
 
-fun ideaWayland(desktopFileDirectory: File) {
+fun jetbrainsWayland(desktopFileDirectory: File) {
     ProcessBuilder("sed", "-i", waylandJetbrains, desktopFileDirectory.toString())
         .redirectOutput(ProcessBuilder.Redirect.INHERIT)
         .start()

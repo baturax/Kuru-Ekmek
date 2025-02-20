@@ -5,9 +5,10 @@ import java.io.File
 val whereIsMyHome: String? = System.getProperty("user.home")
 val cacheDirectory: File = File("$whereIsMyHome/.cache/downloaders")
 val binDirectory: File = File("$whereIsMyHome/.local/bin")
+val shareDirectory: File = File("$whereIsMyHome/.local/share")
 val configDirectory: File = File("$whereIsMyHome/.config")
-val desktopsDirectory: File = File("$whereIsMyHome/.local/share/applications")
-val fontsDirectory: File = File("$whereIsMyHome/.local/share/fonts")
+val desktopsDirectory: File = File("$shareDirectory/applications")
+val fontsDirectory: File = File("$shareDirectory/fonts")
 val autoStartDirectory: File = File("$configDirectory/autostart")
 val realCacheDirectory: File = File("$whereIsMyHome/.cache")
 

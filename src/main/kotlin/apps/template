@@ -10,7 +10,8 @@ open class ChangeMe {
     private val version = ""
     private val url = ""
     private val fileName = ""
-    // private val fileName = ""
+    // private val fileVersion = "2024.3"
+
     private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
     private val extractFileDirectory = File("$binDirectory/$fileName")
     private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
