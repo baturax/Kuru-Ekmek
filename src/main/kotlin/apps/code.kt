@@ -6,34 +6,34 @@ import kotlin.io.path.ExperimentalPathApi
 import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
-open class ChangeMe {
-    private val version = ""
-    private val url = ""
-    private val fileName = ""
+open class VsCode {
+    private val version = "1.97.2.25045"
+    private val url = "https://github.com/VSCodium/vscodium/releases/download/$version/VSCodium-linux-x64-$version.tar.gz"
+    private val fileName = "vscodium"
     // private val fileName = ""
     private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
     private val extractFileDirectory = File("$binDirectory/$fileName")
     private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
 
     //For desktop
-    private val appName = ""
-    private val comment = ""
+    private val appName = "VsCodium"
+    private val comment = " binary releases of VS Code without MS branding/telemetry/licensing"
     private val runExec = File("$binDirectory/$fileName/")
     private val icon = File("$binDirectory/$fileName/")
-    private val categories = ""
+    private val categories = "Development"
     private val terminal = "false"
 
-    fun changeMe() {
+    fun vsCode() {
         downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
     }
 
-    fun changeMeWayland() {
+    fun vsCodeWayland() {
         val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
         electronWayland(desktopFileDirectory)
     }
 
     @OptIn(ExperimentalPathApi::class)
-    fun changeMeUninstall() {
+    fun vsCodeUninstall() {
         Path("$extractFileDirectory").deleteRecursively()
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
@@ -42,14 +42,14 @@ open class ChangeMe {
     }
 }
 
-fun changeMe() {
-    ChangeMe().changeMe()
+fun vsCode() {
+    VsCode().vsCode()
 }
 
-fun changeMeWayland() {
-    ChangeMe().changeMeWayland()
+fun vsCodeWayland() {
+    VsCode().vsCodeWayland()
 }
 
-fun changeMeUninstall() {
-    ChangeMe().changeMeUninstall()
+fun vsCodeUninstall() {
+    VsCode().vsCodeUninstall()
 }
