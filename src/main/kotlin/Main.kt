@@ -16,7 +16,7 @@ fun hello() {
         2. Intellij Clion
         3. Intellij Idea
         4. Ferdium
-        5. 
+        5. VsCodium
         C. to clean cache
         S. Source Code
         I. For Tips 😉
@@ -25,23 +25,28 @@ fun hello() {
     when (getInput) {
             //Yt Music
         "1" -> { ytMusic() ; runHelloAgain() }
-        "1w" -> { ytMusicWayland() ; runHelloAgain() }
-        "1r", "1wr", "1rw" -> { ytMusicUninstall() ; runHelloAgain() }
+        "1w", "1W" -> { ytMusicWayland() ; runHelloAgain() }
+        "1r", "1R" -> { ytMusicUninstall() ; runHelloAgain() }
 
             //Clion
         "2" -> { clion() ; runHelloAgain() }
-        "2w" -> { clionWayland() ; runHelloAgain() }
-        "2r", "2wr", "2rw" -> { clionUninstall() ; runHelloAgain() }
+        "2w", "2W" -> { clionWayland() ; runHelloAgain() }
+        "2r", "2R" -> { clionUninstall() ; runHelloAgain() }
 
             //Idea
         "3" -> { idea()  ; runHelloAgain() }
-        "3w" -> { ideaWayland()  ; runHelloAgain() }
-        "3r", "3wr", "3rw" -> { ideaUninstall()  ; runHelloAgain() }
+        "3w", "3W" -> { ideaWayland()  ; runHelloAgain() }
+        "3r", "3R" -> { ideaUninstall()  ; runHelloAgain() }
 
             //Ferdium
         "4" -> { ferdium() ; runHelloAgain()}
-        "4w" -> { ferdiumWayland() ; runHelloAgain()}
-        "4r", "4wr", "4rw" -> { ferdiumUninstall() ; runHelloAgain() }
+        "4w", "4W" -> { ferdiumWayland() ; runHelloAgain()}
+        "4r", "4R" -> { ferdiumUninstall() ; runHelloAgain() }
+
+            //VsCode
+        "5" -> { vsCode()  ; runHelloAgain() }
+        "5w", "5W" -> { vsCodeWayland()  ; runHelloAgain() }
+        "5r", "5R" -> { vsCodeUninstall()  ; runHelloAgain() }
 
             //Misc
         "C", "c" -> { cleanCache() ; runHelloAgain() }

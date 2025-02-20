@@ -13,7 +13,6 @@ fun checkIfDownloadedFileExists(downloadFileDirectory: File, url: String, extrac
         println("The file that was supposed to be downloaded already exists, skipping")
         extractor(extractFileDirectory, downloadFileDirectory, desktopFileDirectory, appName, runExec, categories, terminal, comment, icon)
     } else if (!downloadFileDirectory.exists()) {
-        println("Downloading")
         downloading(url, downloadFileDirectory,  extractFileDirectory, desktopFileDirectory, appName, runExec, categories, terminal, comment, icon)
     }
 }
