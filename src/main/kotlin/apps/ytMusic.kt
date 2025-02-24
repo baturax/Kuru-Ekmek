@@ -24,7 +24,7 @@ open class YtMusic {
     private val terminal = "false"
 
     fun ytMusic() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
     }
 
     fun ytMusicWayland() {

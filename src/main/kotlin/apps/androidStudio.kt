@@ -25,7 +25,7 @@ open class AndroidStudio {
     private val terminal = "false"
 
     fun androidStudio() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
     }
 
     fun androidStudioWayland() {

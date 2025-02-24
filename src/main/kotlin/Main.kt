@@ -18,6 +18,7 @@ fun hello() {
         4. Ferdium
         5. VsCodium
         6. Android Studio
+        7. Local Send
         C. to clean cache
         S. Source Code
         I. For Tips 😉
@@ -49,10 +50,15 @@ fun hello() {
         "5w", "5W" -> { vsCodeWayland()  ; runHelloAgain() }
         "5r", "5R" -> { vsCodeUninstall()  ; runHelloAgain() }
 
-            // Android Studio
+            //Android Studio
         "6" -> { androidStudio()  ; runHelloAgain() }
         "6w", "6W" -> { androidStudioWayland()  ; runHelloAgain() }
         "6r", "6R" -> { androidStudioUninstall()  ; runHelloAgain() }
+
+            //LocalSend
+        "7" -> { localSend() ; runHelloAgain() }
+        "7w", "7W" -> { localSendWayland() ; runHelloAgain() }
+        "7r", "7R" -> { localSendUninstall() ; runHelloAgain() }
 
         //Misc
         "C", "c" -> { cleanCache() ; runHelloAgain() }

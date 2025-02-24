@@ -24,7 +24,7 @@ open class VsCode {
     private val terminal = "false"
 
     fun vsCode() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
     }
 
     fun vsCodeWayland() {

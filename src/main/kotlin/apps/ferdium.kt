@@ -24,7 +24,7 @@ open class Ferdium {
     private val terminal = "false"
 
     fun ferdium() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
     }
 
     fun ferdiumWayland() {

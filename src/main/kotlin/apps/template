@@ -25,7 +25,7 @@ open class ChangeMe {
     private val terminal = "false"
 
     fun changeMe() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon)
+        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, /*extractTarWithOneFolderUp/justExtract*/)
     }
 
     fun changeMeWayland() {
