@@ -19,6 +19,7 @@ fun hello() {
         5. VsCodium
         6. Android Studio
         7. Local Send
+        8. Prism Launcher
         C. to clean cache
         S. Source Code
         I. For Tips 😉
@@ -59,6 +60,10 @@ fun hello() {
         "7" -> { localSend() ; runHelloAgain() }
         "7w", "7W" -> { localSendWayland() ; runHelloAgain() }
         "7r", "7R" -> { localSendUninstall() ; runHelloAgain() }
+            //Prism Launcher
+        "8" -> { prismLauncher() ; runHelloAgain() }
+        "8w", "8W" -> { prismLauncherWayland() ; runHelloAgain() }
+        "8r", "8R" -> { prismLauncherUninstall() ; runHelloAgain() }
 
         //Misc
         "C", "c" -> { cleanCache() ; runHelloAgain() }

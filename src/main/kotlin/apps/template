@@ -54,7 +54,3 @@ fun changeMeWayland() {
 fun changeMeUninstall() {
     ChangeMe().changeMeUninstall()
 }
-
-
-
-do
