@@ -7,7 +7,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
 open class Ferdium {
-    private val version = "7.0.0"
+    private val version = "7.0.1"
     private val url = "https://github.com/ferdium/ferdium-app/releases/download/v$version/Ferdium-linux-$version.tar.gz"
     private val fileName = "ferdium"
 
