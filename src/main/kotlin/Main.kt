@@ -20,6 +20,7 @@ fun hello() {
         6. Android Studio
         7. Local Send
         8. Prism Launcher
+        9. Zed Editor
         C. to clean cache
         S. Source Code
         I. For Tips 😉
@@ -60,10 +61,16 @@ fun hello() {
         "7" -> { localSend() ; runHelloAgain() }
         "7w", "7W" -> { localSendWayland() ; runHelloAgain() }
         "7r", "7R" -> { localSendUninstall() ; runHelloAgain() }
+
             //Prism Launcher
         "8" -> { prismLauncher() ; runHelloAgain() }
         "8w", "8W" -> { prismLauncherWayland() ; runHelloAgain() }
         "8r", "8R" -> { prismLauncherUninstall() ; runHelloAgain() }
+
+            //Zed Editor
+        "9" -> { zedEditor() ; runHelloAgain() }
+        "9w", "9W" -> { zedEditorWayland() ;runHelloAgain() }
+        "9r", "9R" -> { zedEditorUninstall() ; runHelloAgain() }
 
         //Misc
         "C", "c" -> { cleanCache() ; runHelloAgain() }
