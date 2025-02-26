@@ -39,7 +39,7 @@ open class Zed {
         Path("$downloadFileDirectory").deleteRecursively()
         Path("$configDirectory/zed").deleteRecursively()
         Path("$shareDirectory/zed").deleteRecursively()
-        Path("$realCacheDirectory").deleteRecursively()
+        Path("$realCacheDirectory/zed").deleteRecursively()
 
     }
 }
