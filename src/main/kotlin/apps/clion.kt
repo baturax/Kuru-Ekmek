@@ -7,7 +7,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
 open class Clion {
-    private val version = "2024.3.3"
+    private val version = "2024.3.4"
     private val fileVersion = "2024.3"
     private val url = "https://download-cdn.jetbrains.com/cpp/CLion-$version.tar.gz"
     private val fileName = "clion"
