@@ -12,24 +12,37 @@ open class AndroidStudio {
     private val url = "https://dl.google.com/dl/android/studio/ide-zips/$version/android-studio-$version-linux.tar.gz"
     private val fileName = "android-studio"
 
-    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$TARGZEXT")
     private val extractFileDirectory = File("$binDirectory/$fileName")
-    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
 
-    //For desktop
+    // For desktop
     private val appName = "Android Studio"
-    private val comment = "The official IDE for Android app development now accelerates your productivity with Gemini in Android Studio, your AI-powered coding companion."
+    private val comment =
+        "The official IDE for Android app development now accelerates your productivity with Gemini in Android Studio, your AI-powered coding companion."
     private val runExec = File("$binDirectory/$fileName/bin/studio")
     private val icon = File("$binDirectory/$fileName/bin/studio.png")
     private val categories = "Development"
     private val terminal = "false"
 
     fun androidStudio() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
+        downloader(
+            downloadFileDirectory,
+            url,
+            extractFileDirectory,
+            desktopFileDirectory,
+            appName,
+            runExec.toString(),
+            categories,
+            terminal,
+            comment,
+            icon,
+            EXTRACTTARWITHONEFOLDERUP,
+        )
     }
 
     fun androidStudioWayland() {
-        val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+        val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
         jetbrainsWayland(desktopFileDirectory)
     }
 

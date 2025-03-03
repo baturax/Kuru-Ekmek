@@ -8,14 +8,15 @@ import kotlin.io.path.deleteRecursively
 
 open class VsCode {
     private val version = "1.97.2.25045"
-    private val url = "https://github.com/VSCodium/vscodium/releases/download/$version/VSCodium-linux-x64-$version.tar.gz"
+    private val url =
+        "https://github.com/VSCodium/vscodium/releases/download/$version/VSCodium-linux-x64-$version.tar.gz"
     private val fileName = "vscodium"
 
-    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$TARGZEXT")
     private val extractFileDirectory = File("$binDirectory/$fileName")
-    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
 
-    //For desktop
+    // For desktop
     private val appName = "VsCodium"
     private val comment = " binary releases of VS Code without MS branding/telemetry/licensing"
     private val runExec = File("$binDirectory/$fileName/codium")
@@ -24,11 +25,23 @@ open class VsCode {
     private val terminal = "false"
 
     fun vsCode() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
+        downloader(
+            downloadFileDirectory,
+            url,
+            extractFileDirectory,
+            desktopFileDirectory,
+            appName,
+            runExec.toString(),
+            categories,
+            terminal,
+            comment,
+            icon,
+            EXTRACTTARWITHONEFOLDERUP,
+        )
     }
 
     fun vsCodeWayland() {
-        val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+        val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
         electronWayland(desktopFileDirectory)
     }
 
@@ -39,7 +52,6 @@ open class VsCode {
         Path("$downloadFileDirectory").deleteRecursively()
         Path("$whereIsMyHome/.vscode-oss").deleteRecursively()
         Path("$configDirectory/VSCodium").deleteRecursively()
-
     }
 }
 

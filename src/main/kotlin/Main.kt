@@ -1,3 +1,5 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package kuruekmek
 
 import kuruekmek.apps.*
@@ -11,7 +13,8 @@ fun main() {
 }
 
 fun hello() {
-    println("""Select what you want to download
+    println(
+        """Select what you want to download
         1. Youtube Music
         2. Intellij Clion
         3. Intellij Idea
@@ -24,58 +27,170 @@ fun hello() {
         C. to clean cache
         S. Source Code
         I. For Tips 😉
-    """.trimMargin())
+        """.trimMargin(),
+    )
     val getInput = readlnOrNull().toString()
     when (getInput) {
-            //Yt Music
-        "1" -> { ytMusic() ; runHelloAgain() }
-        "1w", "1W" -> { ytMusicWayland() ; runHelloAgain() }
-        "1r", "1R" -> { ytMusicUninstall() ; runHelloAgain() }
+        //  Yt Music
+        "1" -> {
+            ytMusic()
+            runHelloAgain()
+        }
 
-            //Clion
-        "2" -> { clion() ; runHelloAgain() }
-        "2w", "2W" -> { clionWayland() ; runHelloAgain() }
-        "2r", "2R" -> { clionUninstall() ; runHelloAgain() }
+        "1w", "1W" -> {
+            ytMusicWayland()
+            runHelloAgain()
+        }
 
-            //Idea
-        "3" -> { idea()  ; runHelloAgain() }
-        "3w", "3W" -> { ideaWayland()  ; runHelloAgain() }
-        "3r", "3R" -> { ideaUninstall()  ; runHelloAgain() }
+        "1r", "1R" -> {
+            ytMusicUninstall()
+            runHelloAgain()
+        }
 
-            //Ferdium
-        "4" -> { ferdium() ; runHelloAgain()}
-        "4w", "4W" -> { ferdiumWayland() ; runHelloAgain()}
-        "4r", "4R" -> { ferdiumUninstall() ; runHelloAgain() }
+        //  Clion
+        "2" -> {
+            clion()
+            runHelloAgain()
+        }
 
-            //VsCode
-        "5" -> { vsCode()  ; runHelloAgain() }
-        "5w", "5W" -> { vsCodeWayland()  ; runHelloAgain() }
-        "5r", "5R" -> { vsCodeUninstall()  ; runHelloAgain() }
+        "2w", "2W" -> {
+            clionWayland()
+            runHelloAgain()
+        }
 
-            //Android Studio
-        "6" -> { androidStudio()  ; runHelloAgain() }
-        "6w", "6W" -> { androidStudioWayland()  ; runHelloAgain() }
-        "6r", "6R" -> { androidStudioUninstall()  ; runHelloAgain() }
+        "2r", "2R" -> {
+            clionUninstall()
+            runHelloAgain()
+        }
 
-            //LocalSend
-        "7" -> { localSend() ; runHelloAgain() }
-        "7w", "7W" -> { localSendWayland() ; runHelloAgain() }
-        "7r", "7R" -> { localSendUninstall() ; runHelloAgain() }
+        //  Idea
+        "3" -> {
+            idea()
+            runHelloAgain()
+        }
 
-            //Prism Launcher
-        "8" -> { prismLauncher() ; runHelloAgain() }
-        "8w", "8W" -> { prismLauncherWayland() ; runHelloAgain() }
-        "8r", "8R" -> { prismLauncherUninstall() ; runHelloAgain() }
+        "3w", "3W" -> {
+            ideaWayland()
+            runHelloAgain()
+        }
 
-            //Zed Editor
-        "9" -> { zedEditor() ; runHelloAgain() }
-        "9w", "9W" -> { zedEditorWayland() ;runHelloAgain() }
-        "9r", "9R" -> { zedEditorUninstall() ; runHelloAgain() }
+        "3r", "3R" -> {
+            ideaUninstall()
+            runHelloAgain()
+        }
 
-        //Misc
-        "C", "c" -> { cleanCache() ; runHelloAgain() }
-        "I", "i" -> { showTips() ; runHelloAgain() }
-        "S", "s" -> { openUrl() ; runHelloAgain() }
+        //  Ferdium
+        "4" -> {
+            ferdium()
+            runHelloAgain()
+        }
+
+        "4w", "4W" -> {
+            ferdiumWayland()
+            runHelloAgain()
+        }
+
+        "4r", "4R" -> {
+            ferdiumUninstall()
+            runHelloAgain()
+        }
+
+        // VsCode
+        "5" -> {
+            vsCode()
+            runHelloAgain()
+        }
+
+        "5w", "5W" -> {
+            vsCodeWayland()
+            runHelloAgain()
+        }
+
+        "5r", "5R" -> {
+            vsCodeUninstall()
+            runHelloAgain()
+        }
+
+        // Android Studio
+        "6" -> {
+            androidStudio()
+            runHelloAgain()
+        }
+
+        "6w", "6W" -> {
+            androidStudioWayland()
+            runHelloAgain()
+        }
+
+        "6r", "6R" -> {
+            androidStudioUninstall()
+            runHelloAgain()
+        }
+
+        // LocalSend
+        "7" -> {
+            localSend()
+            runHelloAgain()
+        }
+
+        "7w", "7W" -> {
+            localSendWayland()
+            runHelloAgain()
+        }
+
+        "7r", "7R" -> {
+            localSendUninstall()
+            runHelloAgain()
+        }
+
+        // Prism Launcher
+        "8" -> {
+            prismLauncher()
+            runHelloAgain()
+        }
+
+        "8w", "8W" -> {
+            prismLauncherWayland()
+            runHelloAgain()
+        }
+
+        "8r", "8R" -> {
+            prismLauncherUninstall()
+            runHelloAgain()
+        }
+
+        // Zed Editor
+        "9" -> {
+            zedEditor()
+            runHelloAgain()
+        }
+
+        "9w", "9W" -> {
+            zedEditorWayland()
+            runHelloAgain()
+        }
+
+        "9r", "9R" -> {
+            zedEditorUninstall()
+            runHelloAgain()
+        }
+
+        // Misc
+        "C", "c" -> {
+            cleanCache()
+            runHelloAgain()
+        }
+
+        "I", "i" -> {
+            showTips()
+            runHelloAgain()
+        }
+
+        "S", "s" -> {
+            openUrl()
+            runHelloAgain()
+        }
+
         else -> println("invalid output, leaving 😈")
     }
 }
@@ -92,22 +207,22 @@ fun cleanCache() {
 }
 
 fun runHelloAgain() {
-    repeat(2) {println("")}
+    repeat(2) { println("") }
     hello()
 }
 
-
 fun showTips() {
     println("")
-    println("""ie:
+    println(
+        """ie:
         To install eap versions, append e
         To enable Wayland Support, append w (ide must be installed already)
         To uninstall, append r
-    """.trimMargin())
-    repeat(2) {println("")}
+        """.trimMargin(),
+    )
+    repeat(2) { println("") }
     repeat(40) {
         print("--")
     }
-    repeat(2) {println("")}
-
+    repeat(2) { println("") }
 }

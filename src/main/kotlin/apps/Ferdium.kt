@@ -11,11 +11,11 @@ open class Ferdium {
     private val url = "https://github.com/ferdium/ferdium-app/releases/download/v$version/Ferdium-linux-$version.tar.gz"
     private val fileName = "ferdium"
 
-    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$TARGZEXT")
     private val extractFileDirectory = File("$binDirectory/$fileName")
-    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
 
-    //For desktop
+    // For desktop
     private val appName = "Ferdium"
     private val comment = " All your services in one place, built by the community "
     private val runExec = File("$binDirectory/$fileName/ferdium")
@@ -24,11 +24,23 @@ open class Ferdium {
     private val terminal = "false"
 
     fun ferdium() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
+        downloader(
+            downloadFileDirectory,
+            url,
+            extractFileDirectory,
+            desktopFileDirectory,
+            appName,
+            runExec.toString(),
+            categories,
+            terminal,
+            comment,
+            icon,
+            EXTRACTTARWITHONEFOLDERUP,
+        )
     }
 
     fun ferdiumWayland() {
-        val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+        val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
         electronWayland(desktopFileDirectory)
     }
 
@@ -38,7 +50,7 @@ open class Ferdium {
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
         Path("$configDirectory/$appName").deleteRecursively()
-        Path("$autoStartDirectory/$fileName$desktopext").deleteRecursively()
+        Path("$autoStartDirectory/$fileName$DESKTOPEXT").deleteRecursively()
     }
 }
 

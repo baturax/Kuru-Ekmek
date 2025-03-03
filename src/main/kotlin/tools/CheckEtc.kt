@@ -7,7 +7,7 @@ fun checkETC() {
     checkWget()
     checkCacheDirectory()
     checkFontDirectory()
-    checkbinDirectory()
+    checkBinDirectory()
     checkConfigDirectory()
     checkDesktopsDirectory()
     finished()
@@ -38,7 +38,7 @@ fun checkCacheDirectory() {
     }
 }
 
-fun checkbinDirectory() {
+fun checkBinDirectory() {
     if (binDirectory.exists()) {
         println("Bin directory exists, skipping.")
     } else if (!binDirectory.exists()) {

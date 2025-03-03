@@ -12,11 +12,11 @@ open class Idea {
     private val url = "https://download-cdn.jetbrains.com/idea/ideaIU-$version.tar.gz"
     private val fileName = "idea"
 
-    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$TARGZEXT")
     private val extractFileDirectory = File("$binDirectory/$fileName")
-    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
 
-    //For desktop
+    // For desktop
     private val appName = "Idea"
     private val comment = "The IDE for Professional Development"
     private val runExec = File("$binDirectory/$fileName/bin/idea")
@@ -25,12 +25,23 @@ open class Idea {
     private val terminal = "false"
 
     fun idea() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
+        downloader(
+            downloadFileDirectory,
+            url,
+            extractFileDirectory,
+            desktopFileDirectory,
+            appName,
+            runExec.toString(),
+            categories,
+            terminal,
+            comment,
+            icon,
+            EXTRACTTARWITHONEFOLDERUP,
+        )
     }
 
     fun ideaWayland() {
-
-        val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+        val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
         jetbrainsWayland(desktopFileDirectory)
     }
 
@@ -39,10 +50,10 @@ open class Idea {
         Path("$extractFileDirectory").deleteRecursively()
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
-        Path("$configDirectory/$jetbrains/IntelliJIdea$fileVersion").deleteRecursively()
-        Path("$realCacheDirectory/$jetbrains/IntelliJIdea$fileVersion").deleteRecursively()
+        Path("$configDirectory/$JETBRAINS/IntelliJIdea$fileVersion").deleteRecursively()
+        Path("$realCacheDirectory/$JETBRAINS/IntelliJIdea$fileVersion").deleteRecursively()
     }
-    }
+}
 
 fun idea() {
     Idea().idea()

@@ -12,14 +12,15 @@ val fontsDirectory: File = File("$shareDirectory/fonts")
 val autoStartDirectory: File = File("$configDirectory/autostart")
 val realCacheDirectory: File = File("$whereIsMyHome/.cache")
 
-const val jetbrains = "JetBrains"
-const val mainEntry = "[Desktop Entry]"
-const val applicationType = "Application"
-const val waylandElectron = " 4s/$/ --ozone-platform=wayland/"
-const val waylandJetbrains = " 4s/$/ -Dawt.toolkit.name=WLToolkit/"
-const val targzext = ".tar.gz"
-//const val zipext = ".zip"
-const val desktopext = ".desktop"
-const val extractTarWithOneFolderUp = "--strip-components=1"
-const val justExtract = ""
-const val pngExt = ".png"
+const val JETBRAINS = "JetBrains"
+const val MAINENTRY = "[Desktop Entry]"
+const val APPLICATIONTYPE = "Application"
+const val WAYLANDELECTRON = " 4s/$/ --ozone-platform=wayland/"
+const val WAYLANDJETBRAINS = " 4s/$/ -Dawt.toolkit.name=WLToolkit/"
+const val TARGZEXT = ".tar.gz"
+
+// const val zipext = ".zip"
+const val DESKTOPEXT = ".desktop"
+const val EXTRACTTARWITHONEFOLDERUP = "--strip-components=1"
+const val JUSTEXTRACT = ""
+const val PNGEXT = ".png"

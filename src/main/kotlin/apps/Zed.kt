@@ -12,11 +12,11 @@ open class Zed {
     private val fileName = "zed"
     // private val fileVersion = "2024.3"
 
-    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$TARGZEXT")
     private val extractFileDirectory = File("$binDirectory/$fileName")
-    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
 
-    //For desktop
+    // For desktop
     private val appName = "Zed"
     private val comment = ""
     private val runExec = File("$binDirectory/$fileName/bin/zed")
@@ -25,7 +25,19 @@ open class Zed {
     private val terminal = "false"
 
     fun zedEditor() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, extractTarWithOneFolderUp)
+        downloader(
+            downloadFileDirectory,
+            url,
+            extractFileDirectory,
+            desktopFileDirectory,
+            appName,
+            runExec.toString(),
+            categories,
+            terminal,
+            comment,
+            icon,
+            EXTRACTTARWITHONEFOLDERUP,
+        )
     }
 
     fun zedEditorWayland() {
@@ -40,7 +52,6 @@ open class Zed {
         Path("$configDirectory/zed").deleteRecursively()
         Path("$shareDirectory/zed").deleteRecursively()
         Path("$realCacheDirectory/zed").deleteRecursively()
-
     }
 }
 

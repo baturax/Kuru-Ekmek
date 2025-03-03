@@ -8,15 +8,16 @@ import kotlin.io.path.deleteRecursively
 
 open class LocalSend {
     private val version = "1.17.0"
-    private val url = "https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-x86-64.tar.gz"
+    private val url =
+        "https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-x86-64.tar.gz"
     private val fileName = "localsend"
     // private val fileVersion = "2024.3"
 
-    private val downloadFileDirectory = File("$cacheDirectory/$fileName$targzext")
+    private val downloadFileDirectory = File("$cacheDirectory/$fileName$TARGZEXT")
     private val extractFileDirectory = File("$binDirectory/$fileName")
-    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$desktopext")
+    private val desktopFileDirectory = File("$desktopsDirectory/$fileName$DESKTOPEXT")
 
-    //For desktop
+    // For desktop
     private val appName = "Local Send"
     private val comment = " An open-source cross-platform alternative to AirDrop"
     private val runExec = File("$binDirectory/$fileName/localsend_app")
@@ -25,7 +26,19 @@ open class LocalSend {
     private val terminal = "false"
 
     fun localSend() {
-        downloader(downloadFileDirectory, url, extractFileDirectory, desktopFileDirectory, appName, runExec.toString(), categories, terminal, comment, icon, justExtract)
+        downloader(
+            downloadFileDirectory,
+            url,
+            extractFileDirectory,
+            desktopFileDirectory,
+            appName,
+            runExec.toString(),
+            categories,
+            terminal,
+            comment,
+            icon,
+            JUSTEXTRACT,
+        )
     }
 
 //    fun localSendWayland() {
@@ -39,7 +52,6 @@ open class LocalSend {
         Path("$desktopFileDirectory").deleteRecursively()
         Path("$downloadFileDirectory").deleteRecursively()
         Path("$shareDirectory/org.localsend.localsend_app").deleteRecursively()
-
     }
 }
 
