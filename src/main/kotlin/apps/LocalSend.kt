@@ -22,7 +22,7 @@ open class LocalSend {
     private val comment = " An open-source cross-platform alternative to AirDrop"
     private val runExec = File("$binDirectory/$fileName/localsend_app")
     private val icon = File("$binDirectory/$fileName/data/flutter_assets/assets/img/logo.ico")
-    private val categories = "Image"
+    private val categories = "Network"
     private val terminal = "false"
 
     fun localSend() {

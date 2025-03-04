@@ -20,7 +20,7 @@ open class Ferdium {
     private val comment = " All your services in one place, built by the community "
     private val runExec = File("$binDirectory/$fileName/ferdium")
     private val icon = File("$binDirectory/$fileName/resources/")
-    private val categories = "Social"
+    private val categories = "Network"
     private val terminal = "false"
 
     fun ferdium() {

@@ -21,7 +21,7 @@ open class YtMusic {
     private val comment = "YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader"
     private val runExec = File("$binDirectory/$fileName/$fileName")
     private val icon = File("$binDirectory/$fileName/resources/app.asar.unpacked/assets/$fileName$PNGEXT")
-    private val categories = "Music"
+    private val categories = "MultiMedia"
     private val terminal = "false"
 
     fun ytMusic() {
