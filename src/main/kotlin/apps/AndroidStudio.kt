@@ -7,7 +7,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
 open class AndroidStudio {
-    private val version = "2024.2.2.15"
+    private val version = "2024.2.1.9"
     private val fileVersion = "2024.2"
     private val url = "https://dl.google.com/dl/android/studio/ide-zips/$version/android-studio-$version-linux.tar.gz"
     private val fileName = "android-studio"
@@ -61,6 +61,7 @@ open class AndroidStudio {
 
 fun androidStudio() {
     AndroidStudio().androidStudio()
+    println("libbsd must be installed for emulators to work.")
 }
 
 fun androidStudioWayland() {
