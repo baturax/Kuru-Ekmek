@@ -7,7 +7,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
 open class Zed {
-    private val version = "0.175.6"
+    private val version = "0.177.7"
     private val url = "https://github.com/zed-industries/zed/releases/download/v$version/zed-linux-x86_64.tar.gz"
     private val fileName = "zed"
     // private val fileVersion = "2024.3"

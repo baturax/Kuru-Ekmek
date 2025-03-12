@@ -7,7 +7,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
 open class VsCode {
-    private val version = "1.97.2.25045"
+    private val version = "1.98.1.25070"
     private val url =
         "https://github.com/VSCodium/vscodium/releases/download/$version/VSCodium-linux-x64-$version.tar.gz"
     private val fileName = "vscodium"
