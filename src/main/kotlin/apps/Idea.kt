@@ -7,7 +7,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
 open class Idea {
-    private val version = "2024.3.4.1"
+    private val version = "2024.3.5"
     private val fileVersion = "2024.3"
     private val url = "https://download-cdn.jetbrains.com/idea/ideaIU-$version.tar.gz"
     private val fileName = "idea"

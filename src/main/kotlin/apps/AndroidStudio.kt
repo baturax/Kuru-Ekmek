@@ -7,7 +7,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
 open class AndroidStudio {
-    private val version = "2024.3.1.13"
+    private val version = "2024.3.1.14"
     private val fileVersion = "2024.3"
     private val url = "https://dl.google.com/dl/android/studio/ide-zips/$version/android-studio-$version-linux.tar.gz"
     private val fileName = "android-studio"
