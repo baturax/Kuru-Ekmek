@@ -7,7 +7,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteRecursively
 
 open class Zed {
-    private val version = "0.178.5"
+    private val version = "0.179.4"
     private val url = "https://github.com/zed-industries/zed/releases/download/v$version/zed-linux-x86_64.tar.gz"
     private val fileName = "zed"
     // private val fileVersion = "2024.3"
@@ -18,7 +18,8 @@ open class Zed {
 
     // For desktop
     private val appName = "Zed"
-    private val comment = ""
+    private val comment = "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.\n" +
+            "\n"
     private val runExec = File("$binDirectory/$fileName/bin/zed")
     private val icon = File("$binDirectory/$fileName/share/icons/hicolor/1024x1024/apps/zed.png")
     private val categories = ""
